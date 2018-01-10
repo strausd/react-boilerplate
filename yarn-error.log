@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\strausd\.yarn\bin\yarn.js add --dev dotenv
+  C:\Program Files\nodejs\node.exe C:\Users\strausd\.yarn\bin\yarn.js run test
 
 PATH: 
   C:\Users\strausd\.yarn\bin;C:\Users\strausd\.config\yarn\global\node_modules\.bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\strausd\bin;C:\Program Files (x86)\Python\Python3.6.1\Scripts;C:\Program Files (x86)\Python\Python3.6.1;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Users\strausd\AppData\Local\Microsoft\WindowsApps;C:\Users\strausd\AppData\Local\atom\bin;C:\Program Files\Heroku\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\strausd\AppData\Roaming\npm;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps
@@ -21,7 +21,9 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "build": "webpack",
-      "dev-server": "webpack-dev-server"
+      "dev-server": "webpack-dev-server",
+      "test": "jest",
+      "test-watch": "jest --watch"
     },
     "dependencies": {
       "babel-core": "^6.26.0",
@@ -29,6 +31,7 @@ npm manifest:
       "babel-plugin-transform-object-rest-spread": "^6.26.0",
       "babel-preset-env": "^1.6.1",
       "babel-preset-react": "^6.24.1",
+      "dotenv": "^4.0.0",
       "react": "^16.2.0",
       "react-dom": "^16.2.0",
       "react-redux": "^5.0.6",
@@ -47,9 +50,14 @@ npm manifest:
       "webpack-dev-server": "^2.10.1"
     },
     "jest": {
+      "collectCoverage": true,
+      "collectCoverageFrom": [
+        "**/*.{js,jsx}",
+        "!**/node_modules/**",
+      ],
       "setupFiles": [
         "raf/polyfill",
-        
+        "<rootDir>/src/tests/setupTests.jsx"
       ]
     }
   }
@@ -1721,6 +1729,10 @@ Lockfile:
     dependencies:
       dom-serializer "0"
       domelementtype "1"
+  
+  dotenv@^4.0.0:
+    version "4.0.0"
+    resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
   
   ecc-jsbn@~0.1.1:
     version "0.1.1"
@@ -5781,7 +5793,7 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  SyntaxError: C:\Users\strausd\Dropbox\Stuff\udemy\personal\react-boilerplate\package.json: Unexpected token ] in JSON at position 903
+  SyntaxError: C:\Users\strausd\Dropbox\Stuff\udemy\personal\react-boilerplate\package.json: Unexpected token ] in JSON at position 1042
       at JSON.parse (<anonymous>)
       at C:\Users\strausd\.yarn\lib\cli.js:770:59
       at Generator.next (<anonymous>)
