@@ -6,9 +6,9 @@ import configureStore from './store/store';
 import App from './components/App';
 
 // TODO
-// redux
+// Production webpack build scripts
+// Cleanup for solid boilerplate
 // lazy loading like Angular has
-// Add testing
 
 const store = configureStore();
 
