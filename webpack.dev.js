@@ -9,7 +9,7 @@ module.exports = merge(common(), {
     contentBase: path.join(__dirname, 'public'),
     historyApiFallback: true,
     port: 8000,
-    publicPath: './dist/',
+    publicPath: '/dist/',
     lazy: false
   }
 });
