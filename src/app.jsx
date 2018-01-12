@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import configureStore from './store/store';
 import App from './components/App';
 
+import './styles/styles.scss';
+
 // TODO
 // Production webpack build scripts
 // Cleanup for solid boilerplate
