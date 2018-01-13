@@ -8,7 +8,6 @@ import App from './components/App';
 import './styles/styles.scss';
 
 // TODO
-// Production webpack build scripts
 // Cleanup for solid boilerplate
 // lazy loading like Angular has
 

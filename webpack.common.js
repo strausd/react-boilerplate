@@ -6,7 +6,8 @@ module.exports = () => {
         entry: './src/app.jsx',
         output: {
             path: path.resolve(__dirname, 'public', 'dist'),
-            filename: 'bundle.js'
+            filename: 'bundle.js',
+            chunkFilename: '[name].bundle.js',
         },
         module: {
             loaders: [
