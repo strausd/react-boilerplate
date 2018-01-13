@@ -9,7 +9,6 @@ import './styles/styles.scss';
 
 // TODO
 // Cleanup for solid boilerplate
-// lazy loading like Angular has
 
 const store = configureStore();
 

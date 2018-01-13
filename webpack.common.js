@@ -5,9 +5,10 @@ module.exports = () => {
     return {
         entry: './src/app.jsx',
         output: {
-            path: path.resolve(__dirname, 'public', 'dist'),
+            chunkFilename: 'bundle.[name].js',
             filename: 'bundle.js',
-            chunkFilename: '[name].bundle.js',
+            path: path.resolve(__dirname, 'public', 'dist'),
+            publicPath: 'dist/',
         },
         module: {
             loaders: [
