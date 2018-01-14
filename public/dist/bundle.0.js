@@ -1,2 +1,0 @@
-webpackJsonp([0],{116:function(e,t,u){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var l,n=u(0),a=(l=n)&&l.__esModule?l:{default:l};t.default=function(){return a.default.createElement("div",null,a.default.createElement("h1",null,"About Page"))}}});
-//# sourceMappingURL=bundle.0.js.map
