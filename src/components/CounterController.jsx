@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { incrementAsync, decrementAsync, resetAsync } from '../actions/baseActions';
+import { incrementAsync } from '../actions/baseActions';
 
 
 export class CounterController extends React.Component {
@@ -13,8 +13,6 @@ export class CounterController extends React.Component {
         return (
             <div>
                 <button onClick={() => this.props.increment()}>Increment</button>
-                <button onClick={() => this.props.decrement()}>Decrement</button>
-                <button onClick={() => this.props.reset()}>Reset</button>
             </div>
         );
     }
@@ -23,8 +21,6 @@ export class CounterController extends React.Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         increment: () => dispatch(incrementAsync()),
-        decrement: () => dispatch(decrementAsync()),
-        reset: () => dispatch(resetAsync()),
     };
 };
 
