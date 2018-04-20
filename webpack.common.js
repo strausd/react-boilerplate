@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = () => {
@@ -8,7 +9,7 @@ module.exports = () => {
             chunkFilename: 'bundle.[name].js',
             filename: 'bundle.js',
             path: path.resolve(__dirname, 'public', 'dist'),
-            publicPath: 'dist/',
+            publicPath: '/dist/',
         },
         module: {
             loaders: [
@@ -33,7 +34,22 @@ module.exports = () => {
             ]
         },
         plugins: [
-            new ExtractTextPlugin('style.css')
+            new ExtractTextPlugin('style.css'),
+            new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'node-static',
+                filename: 'node-static.js',
+                minChunks(module, count) {
+                    var context = module.context;
+                    return context && context.indexOf('node_modules') >= 0;
+                },
+            }),
+            new webpack.optimize.CommonsChunkPlugin({
+                async: 'used-twice',
+                minChunks(module, count) {
+                    return count >= 2;
+                },
+            })
         ]
     };
 }
