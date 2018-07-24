@@ -12,5 +12,5 @@ This project contains nearly all react and non-react related packages and setup 
 
 ### Get Setup
   1. Clone this repo
-  2. `yarn install`
-  3. `yarn start`
+  2. `npm install`
+  3. `npm start`

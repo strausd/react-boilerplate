@@ -1,11 +1,10 @@
 import React from 'react';
 import Loadable from 'react-loadable';
 
-
 const LoadableAboutPageWrapper = Loadable({
     loader: () => import('./AboutPage'),
-    loading(){
-        return <p>Loading...</p>
+    loading() {
+        return <p>Loading...</p>;
     }
 });
 

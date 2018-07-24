@@ -5,7 +5,7 @@ export const increment = () => {
 };
 
 export const incrementAsync = () => {
-    return (dispatch) => {
+    return dispatch => {
         setTimeout(() => {
             dispatch(increment());
         }, 2000);

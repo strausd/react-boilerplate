@@ -1,10 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import CounterController from './CounterController';
 
-
 export class HomePage extends React.Component {
+    static propTypes = {
+        counter: PropTypes.number
+    };
+
     constructor(props) {
         super(props);
     }
@@ -18,9 +22,9 @@ export class HomePage extends React.Component {
             </div>
         );
     }
-};
+}
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         counter: state
     };
